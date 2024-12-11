@@ -1,0 +1,13 @@
+## Interface: 30300
+## Title: Arena GCDs
+## Notes: Arena GCD Tracker: Monitor Enemy GCDs and Instant Spell Usage with Icons and Timers
+## Author: Oscargforce
+## Version: 1.0
+## SavedVariablesPerCharacter: ArenaGCDsConfig
+
+ArenaGCDs_Options.lua
+ArenaGCDs.lua
+SpellTable.lua
+BuffTables.lua
+
+
