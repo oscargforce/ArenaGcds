@@ -1,4 +1,6 @@
-arenaGCDSpellTable = {
+local addonName, addon = ...
+
+addon.spellTable = {
     ["Warrior"] = {
         ["Shield Slam"] = {
             ["castTime"] = 0,

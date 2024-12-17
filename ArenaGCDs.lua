@@ -1,3 +1,10 @@
+local addonName, addon = ...
+local instantCastBuffsTable = addon.instantCastBuffsTable
+local hasteBuffsTable = addon.hasteBuffsTable
+local spellTable = addon.spellTable
+local UnitClass = UnitClass
+local GetShapeshiftForm = GetShapeshiftForm
+local UnitAura = UnitAura
 local arenaFrames = {}
 
 local unitClasses = {
@@ -55,12 +62,12 @@ local function determineGCD(unitClass, spellName, unitId)
         end
     end
 
-    local isHeroismActive = arenaGCDHasteBuffsTable["Heroism"][unitId]
+    local isHeroismActive = hasteBuffsTable["Heroism"][unitId]
     if isHeroismActive then
       return 1.0 
     end 
 
-    local hasteBuffs = arenaGCDHasteBuffsTable[unitClass]
+    local hasteBuffs = hasteBuffsTable[unitClass]
 
     if hasteBuffs then
         for buffName, buffData in pairs(hasteBuffs) do
@@ -118,13 +125,13 @@ local function onSpellCastSucceeded(self, event, unitId, spellName, spellRank)
     local unitClass = getUnitClass(unitId)
 
     -- Find the spellId from the lookup table (make sure spellName matches)
-    local spellData = arenaGCDSpellTable[unitClass][spellName]
+    local spellData = spellTable[unitClass][spellName]
 
     if not spellData then
         return
     end
     
-    local classInstantBuffs  = arenaGCDInstantCastBuffsTable[unitClass]
+    local classInstantBuffs  = instantCastBuffsTable[unitClass]
     local isInstantCast = false
 
     if classInstantBuffs then 
@@ -157,7 +164,7 @@ local function onSpellCastSucceeded(self, event, unitId, spellName, spellRank)
 end
 
 local function detectInstantProcs(unitClass, unitId)
-    local classBuffs = arenaGCDInstantCastBuffsTable[unitClass]
+    local classBuffs = instantCastBuffsTable[unitClass]
     if not classBuffs then return end
 
     for buffName, arenaUnits in pairs(classBuffs) do
@@ -180,11 +187,11 @@ end
 
 local function detectHasteProcs(unitClass, unitId)
     local hasHeroBuff = UnitAura(unitId, "Heroism") or UnitAura(unitId, "Bloodlust")
-    arenaGCDHasteBuffsTable["Heroism"][unitId] = hasHeroBuff and true or false
+    hasteBuffsTable["Heroism"][unitId] = hasHeroBuff and true or false
 
     if hasHeroBuff then return end
     
-    local classBuffs = arenaGCDHasteBuffsTable[unitClass]
+    local classBuffs = hasteBuffsTable[unitClass]
     if not classBuffs then return end
 
     for buffName, arenaUnits in pairs(classBuffs) do
