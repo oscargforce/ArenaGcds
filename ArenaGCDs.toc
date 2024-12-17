@@ -5,9 +5,9 @@
 ## Version: 1.0
 ## SavedVariablesPerCharacter: ArenaGCDsConfig
 
-ArenaGCDs_Options.lua
-ArenaGCDs.lua
 SpellTable.lua
 BuffTables.lua
+ArenaGCDs_Options.lua
+ArenaGCDs.lua
 
 

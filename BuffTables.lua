@@ -1,5 +1,6 @@
+local addonName, addon = ...
 -- Table to track instant cast proc auras, like Nature's Swiftness.
-arenaGCDInstantCastBuffsTable = {
+addon.instantCastBuffsTable = {
     ["Druid"] = {
         ["Predator's Swiftness"] = {
             ["arena1"] = false,
@@ -127,7 +128,7 @@ arenaGCDInstantCastBuffsTable = {
 }
 
 -- Table to track haste auras that reduce the GCD, such as Heroism.
-arenaGCDHasteBuffsTable = {
+addon.hasteBuffsTable = {
     ["Heroism"] = {
         ["arena1"] = false,
         ["arena2"] = false,
