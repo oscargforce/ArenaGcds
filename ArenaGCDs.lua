@@ -2,6 +2,8 @@ local addonName, addon = ...
 local instantCastBuffsTable = addon.instantCastBuffsTable
 local hasteBuffsTable = addon.hasteBuffsTable
 local spellTable = addon.spellTable
+local createArrowButton = addon.createArrowButton
+local playTestAnimation = addon.playTestAnimation
 local UnitClass = UnitClass
 local GetShapeshiftForm = GetShapeshiftForm
 local UnitAura = UnitAura
@@ -274,10 +276,10 @@ function ArenaGCDFramesContainer:Init()
     self:SetSize(150, 400) 
     self:ClearAllPoints()
     self:SetPoint(position.point, UIParent, position.relativePoint, position.x, position.y) 
-    self.upArrow = createArenaGcdsArrowButton(self, "UP", 0, 15)
-    self.downArrow = createArenaGcdsArrowButton(self, "DOWN", 0, -15)
-    self.leftArrow = createArenaGcdsArrowButton(self, "LEFT", -15, 0)
-    self.rightArrow = createArenaGcdsArrowButton(self, "RIGHT", 15, 0)
+    self.upArrow = createArrowButton(self, "UP", 0, 15)
+    self.downArrow = createArrowButton(self, "DOWN", 0, -15)
+    self.leftArrow = createArrowButton(self, "LEFT", -15, 0)
+    self.rightArrow = createArrowButton(self, "RIGHT", 15, 0)
     
     -- Initially hide the buttons (if not in test mode)
     self:EnableTestMode()
@@ -299,7 +301,7 @@ function ArenaGCDFramesContainer:EnableTestMode()
         self.downArrow:Show() 
         self.leftArrow:Show() 
         self.rightArrow:Show() 
-        playArenaGCDsTestAnimation(arenaFrames, startCooldownShading)
+        playTestAnimation(arenaFrames, startCooldownShading)
     else 
         self:SetMovable(false)
         self:EnableMouse(false)
