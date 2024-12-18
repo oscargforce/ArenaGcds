@@ -1,3 +1,5 @@
+local addonName, addon = ...
+
 local function round(value)
     local power = 10 ^ 1
     return math.floor(value * power + 0.5) / power
@@ -202,7 +204,7 @@ local function setDefaultConfig()
     end
 end
 
-function createArenaGcdsArrowButton(parent, direction, x, y)
+function addon.createArrowButton(parent, direction, x, y)
     local button = CreateFrame("Button", nil, parent, "UIPanelButtonTemplate")
     button:SetSize(24, 24)
     button:SetFrameLevel("10")
@@ -246,7 +248,7 @@ function createArenaGcdsArrowButton(parent, direction, x, y)
     return button
 end
 
-function playArenaGCDsTestAnimation(arenaFrames, startCooldownShading)
+function addon.playTestAnimation(arenaFrames, startCooldownShading)
     local timerFrame = CreateFrame("Frame")
     local interval = 1.5
     local timeElapsed = 0
