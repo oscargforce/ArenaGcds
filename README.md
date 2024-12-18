@@ -7,6 +7,18 @@ For example, if a Warrior uses **Mortal Strike**, the addon shows a Mortal Strik
 
 ---
 
+## ⚙️ Installation Instructions
+
+1. **Download the addon** [from the GitHub release page](https://github.com/oscargforce/ArenaGcds/releases/tag/v1.0.1)
+2. **Unzip the file**.
+3. Rename the extracted folder to **`ArenaGCDs`** (if it is not already named correctly).  
+   - This step is crucial because the game requires the addon folder to match the name defined in the `.toc` file inside the extracted folder.
+4. Move the **`ArenaGCDs`** folder into your WoW Addons directory:  
+   - `World of Warcraft/Interface/AddOns/`
+5. Restart your game or reload your UI with `/reload`.
+
+---
+
 ## 🔍 Why Use This Addon?  
 This addon helps you:  
 - Track **instant abilities** used by arena units.  
