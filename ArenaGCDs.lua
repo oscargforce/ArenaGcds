@@ -34,6 +34,9 @@ end
 
 local function determineGCD(unitClass, spellName, unitId)
     if unitClass == "Hunter" then 
+        if spellName == "Readiness" then
+            return 1.0
+        end
         return 1.5
     end
 
