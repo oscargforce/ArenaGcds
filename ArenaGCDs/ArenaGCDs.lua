@@ -234,8 +234,11 @@ local function createArenaFrames()
         ArenaGcdFrame.icon = iconTexture 
 
         -- Add a font string to display the remaining time
-        local countdownText = ArenaGcdFrame:CreateFontString("$parentCountdown", "OVERLAY", "GameFontNormalLarge")
-        countdownText:SetPoint("CENTER", ArenaGcdFrame, "CENTER", 0, 0)
+        local countdownFrame = CreateFrame("Frame", "$parentCountdownFrame", ArenaGcdFrame)
+        countdownFrame:SetAllPoints(ArenaGcdFrame)
+        countdownFrame:SetFrameLevel(4) 
+        local countdownText = countdownFrame:CreateFontString("$parentCountdown", "OVERLAY", "GameFontNormalLarge")
+        countdownText:SetPoint("CENTER", countdownFrame, "CENTER", 0, 0)
         countdownText:SetFont("Fonts\\FRIZQT__.TTF", fontSize)
         countdownText:SetText("") 
         countdownText:SetTextColor(1, 1, 1, 1)  
@@ -245,6 +248,7 @@ local function createArenaFrames()
         local cooldownOverlay = CreateFrame("Cooldown", "$parentCooldown", ArenaGcdFrame, "CooldownFrameTemplate")
         cooldownOverlay:SetAllPoints(iconTexture) 
         cooldownOverlay:SetReverse(isReversed)
+        cooldownOverlay:SetFrameLevel(3) 
         ArenaGcdFrame.cooldownOverlay = cooldownOverlay 
 
         -- Create a frame to start the timer for the GCD

@@ -287,3 +287,8 @@ optionsInitFrame:SetScript("OnEvent", function(self, event, addonName)
         self:UnregisterEvent("ADDON_LOADED")
     end
 end)
+
+SLASH_ARENGCDS1 = "/arenagcds" 
+SlashCmdList["ARENGCDS"] = function()
+    InterfaceOptionsFrame_OpenToCategory("Arena GCDs")
+end
