@@ -9,7 +9,7 @@ For example, if a Warrior uses **Mortal Strike**, the addon shows a Mortal Strik
 
 ## ⚙️ Installation Instructions
 
-1. **Download the addon** [from the GitHub release page](https://github.com/oscargforce/ArenaGcds/releases/tag/v1.0.1)
+1. **Download the addon** [from the GitHub release page](https://github.com/oscargforce/ArenaGcds/releases/tag/v1.0.0)
 2. **Unzip the file**.
 3. Open the unziped folder and move the **`ArenaGCDs`** folder into your WoW Addons directory:  
    - `World of Warcraft/Interface/AddOns/`
