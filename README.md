@@ -11,13 +11,10 @@ For example, if a Warrior uses **Mortal Strike**, the addon shows a Mortal Strik
 
 1. **Download the addon** [from the GitHub release page](https://github.com/oscargforce/ArenaGcds/releases/tag/v1.0.1)
 2. **Unzip the file**.
-3. **Rename the Folder:**
-   - Make sure the extracted folder is named **ArenaGCDs**.
-   - If it is not, rename it to **ArenaGCDs**. This is important because the game requires the addon folder to match the name defined in the `.toc` file inside the extracted folder.
-4. Move the **`ArenaGCDs`** folder into your WoW Addons directory:  
+3. Open the unziped folder and move the **`ArenaGCDs`** folder into your WoW Addons directory:  
    - `World of Warcraft/Interface/AddOns/`
-5. Restart your game or reload your UI with `/reload`.
-6. **Open the Options Panel:**
+4. Restart your game or reload your UI with `/reload`.
+5. **Open the Options Panel:**
    - Once in the game, you can open the ArenaGCDs options panel by typing the following command in the chat:
      ```
      /arenagcds
