@@ -248,10 +248,13 @@ function addon.createArrowButton(parent, direction, x, y)
     return button
 end
 
+local timerFrame = CreateFrame("Frame")
+timerFrame:Hide()
+
 function addon.playTestAnimation(arenaFrames, startCooldownShading)
-    local timerFrame = CreateFrame("Frame")
     local interval = 1.5
     local timeElapsed = 0
+    local isFirstTimePlaying = true
 
     timerFrame:Show()
   
@@ -261,8 +264,9 @@ function addon.playTestAnimation(arenaFrames, startCooldownShading)
     
     timerFrame:SetScript("OnUpdate", function(self, elapsed)
         timeElapsed = timeElapsed + elapsed
-        if timeElapsed >= interval then
-            timeElapsed = 0 
+        if timeElapsed >= interval or isFirstTimePlaying then
+            timeElapsed = 0
+            isFirstTimePlaying = false 
 
             if not ArenaGCDsConfig.enableTestMode then
                 stopCooldownLoop() 

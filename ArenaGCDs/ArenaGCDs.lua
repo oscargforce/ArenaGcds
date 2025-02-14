@@ -248,7 +248,8 @@ local function createArenaFrames()
         local cooldownOverlay = CreateFrame("Cooldown", "$parentCooldown", ArenaGcdFrame, "CooldownFrameTemplate")
         cooldownOverlay:SetAllPoints(iconTexture) 
         cooldownOverlay:SetReverse(isReversed)
-        cooldownOverlay:SetFrameLevel(3) 
+        cooldownOverlay:SetFrameLevel(3)
+        cooldownOverlay.noCooldownCount = true -- Disables OmniCC 
         ArenaGcdFrame.cooldownOverlay = cooldownOverlay 
 
         -- Create a frame to start the timer for the GCD
