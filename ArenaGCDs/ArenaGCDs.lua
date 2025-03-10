@@ -53,9 +53,13 @@ local function determineGCD(unitClass, spellName, unitId)
         return 1.5
     end
 
-    if unitClass == "Rogue" or (unitClass == "Druid" and GetShapeshiftForm(unitId) == 3) then
-        return 1.0 -- Rogues and Cats have a 1s GCD
-    end 
+    if unitClass == "Rogue" then
+        return 1.0
+    end
+    
+    if unitClass == "Druid" and hasteBuffsTable["Druid"]["Cat Form"][unitId] then
+        return 1.0 -- Cats have a 1s GCD
+    end
 
     if unitClass == "Warlock" and spellName == "Shadowfury" then
         return 0.5

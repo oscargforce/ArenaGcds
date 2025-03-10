@@ -153,7 +153,14 @@ addon.hasteBuffsTable = {
             ["arena3"] = false,
             ["arena4"] = false,
             ["arena5"] = false,
-        }
+        },
+        ["Cat Form"] = {
+            ["arena1"] = false,
+            ["arena2"] = false,
+            ["arena3"] = false,
+            ["arena4"] = false,
+            ["arena5"] = false,
+        },
     },
     ["Mage"] = {
         ["Power Infusion"] = {
